@@ -23,6 +23,8 @@ angular
 
 This will save the inner HTML of the ui-view to `$templateCache` as `template.html`, saving you another round-trip to the server
 
+You can save multiple snippets of already HTML placed on the page, instead of relying on `<script type="text/ng-template" id="template.html">` like menus, asides, widgets that were rendered when the page loaded.
+
 ## Why?
 
 When using ng-view, ui-view along with templateUrl or ng-include, angular will issue an AJAX call to fetch the content for that view. When you are creating an hybrid page, that mix 'turbo links', many SPA views and server rendered content, you'll end up with the first load of the page already loaded inside ng-view / ui-view, so you don't need it for fetchin g the content that is already visible on the page, and usually refetching it will cause a flicker. So you save the content you already have to the templateCache, so it won't create another get request to the server.
