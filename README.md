@@ -7,7 +7,7 @@ A directive that will save the content of a part of your server rendered HTML, s
 ```js
 angular
 .module('yourapp', ['saveContent'])
-.config(['$stateProvider', function(){
+.config(['$stateProvider', function($stateProvider){
   $stateProvider.state('index', {
     url: '/',
     templateUrl: 'template.html'
